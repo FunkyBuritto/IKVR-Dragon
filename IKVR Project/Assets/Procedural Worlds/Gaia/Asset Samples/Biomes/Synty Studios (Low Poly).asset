@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bf996bd940696a4b814912e16c3d5ac, type: 3}
+  m_Name: Synty Studios (Low Poly)
+  m_EditorClassIdentifier: 
+  m_orderNumber: 100
+  m_spawnerPresetList:
+  - m_autoAssignPrototypes: 1
+    m_spawnerSettings: {fileID: 11400000, guid: 5d67dcaf933cf3d4e8edae39bb3951b1,
+      type: 2}
+    m_isActiveInStamper: 1
+    m_isActiveInBiome: 1
+  - m_autoAssignPrototypes: 0
+    m_spawnerSettings: {fileID: 11400000, guid: 406154f0c85b1544cb4a4c38afe9f190,
+      type: 2}
+    m_isActiveInStamper: 0
+    m_isActiveInBiome: 1
+  - m_autoAssignPrototypes: 0
+    m_spawnerSettings: {fileID: 11400000, guid: 41ed9b207ce1ff347b84fecff54f857e,
+      type: 2}
+    m_isActiveInStamper: 0
+    m_isActiveInBiome: 1
+  - m_autoAssignPrototypes: 0
+    m_spawnerSettings: {fileID: 11400000, guid: 94bc9871295e8c9479ed334f9c8c01c2,
+      type: 2}
+    m_isActiveInStamper: 0
+    m_isActiveInBiome: 1
+  m_postProcessingProfileGUID: 
+  m_gaiaSceneCullingProfile: {fileID: 11400000, guid: f2b69d54e7ceb52428cd94a1dc808537,
+    type: 2}

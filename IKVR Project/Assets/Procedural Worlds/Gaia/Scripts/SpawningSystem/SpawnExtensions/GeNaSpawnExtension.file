@@ -1,0 +1,71 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace Gaia
+{
+    /// <summary>
+    /// Simple Spawn Extension for demo / debug purposes. Just writes some info to the console when being executed.
+    /// </summary>
+    public class GeNaSpawnExtension : MonoBehaviour, ISpawnExtension
+    {
+        public string Name { get { return "GeNaSpawnExtension"; } }
+
+        public bool AffectsHeights => false;
+
+        public bool AffectsTextures => false;
+
+        public GameObject m_genaSpawnerPrefab;
+        private GeNa.Spawner m_genaSpawnerInstance;
+
+        public void Close()
+        {
+            //Debug.Log("Spawn Extension is closing down.");
+            if (m_genaSpawnerInstance != null)
+            {
+                DestroyImmediate(m_genaSpawnerInstance.gameObject);
+            }
+        }
+
+        public void Init(Spawner spawner)
+        {
+            //Debug.Log("Spawn Extension starting up.");
+            if (m_genaSpawnerPrefab == null)
+            {
+                Debug.LogWarning("GeNa Spawn Extension '" + Name + "' does not have a GeNa Spawner Prefab assigned.");
+                return;
+            }
+
+            GameObject newGO = Instantiate(m_genaSpawnerPrefab);
+            m_genaSpawnerInstance = newGO.GetComponent<GeNa.Spawner>();
+
+            if (m_genaSpawnerInstance == null)
+            {
+                Debug.LogWarning("Could not find a GeNa Spawner component on the prefab for GeNa Spawn Extension '" + Name + "'. Does this prefab use a GeNa Spawner component on the top level?");
+            }
+
+
+        }
+
+        public void Spawn(Spawner spawner, Transform target, int ruleIndex, int instanceIndex, SpawnExtensionInfo spawnExtensionInfo)
+        {
+            //Debug.Log("Spawn Extension spawning.");
+            if (m_genaSpawnerInstance != null)
+            {
+
+                float scalarX = (spawnExtensionInfo.m_position.x - spawnExtensionInfo.m_currentTerrain.transform.position.x) / spawnExtensionInfo.m_currentTerrain.terrainData.size.x;
+                float scalarZ = (spawnExtensionInfo.m_position.z - spawnExtensionInfo.m_currentTerrain.transform.position.z) / spawnExtensionInfo.m_currentTerrain.terrainData.size.z;
+                Vector3 normal = spawnExtensionInfo.m_currentTerrain.terrainData.GetInterpolatedNormal(scalarX,scalarZ);
+                m_genaSpawnerInstance.Initialise(target,"Gaia Spawn Extension Spawn",false);
+                m_genaSpawnerInstance.m_parentName = target.name;
+                m_genaSpawnerInstance.Spawn(spawnExtensionInfo.m_position, true);
+            }
+
+        }
+
+        public void Delete()
+        {
+
+        }
+    }
+}

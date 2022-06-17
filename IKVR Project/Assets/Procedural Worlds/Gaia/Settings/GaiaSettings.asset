@@ -1,0 +1,276 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf0b22f014ec7be40896c70f04417587, type: 3}
+  m_Name: GaiaSettings
+  m_EditorClassIdentifier: 
+  m_currentController: 1
+  m_customPlayerObject: {fileID: 0}
+  m_customPlayerCamera: {fileID: 0}
+  m_currentSize: 3
+  m_currentEnvironment: 2
+  m_currentRenderer: 0
+  m_currentDefaults: {fileID: 11400000, guid: 54f4fac3c7f0a1e44a45853d26c87b49, type: 2}
+  m_tilesX: 1
+  m_tilesZ: 1
+  m_createTerrainScenes: 0
+  m_unloadTerrainScenes: 0
+  m_floatingPointFix: 0
+  m_targeSizePreset: 3
+  m_defaultStampSpawnSettings: {fileID: 11400000, guid: 81b0e93a964e9804c9806f8bde6ba9ec,
+    type: 2}
+  m_defaultBiomeMaskSettings: {fileID: 0}
+  m_spawnSimulateComputeShader: {fileID: 7200000, guid: ab31bdb5aecea3744951fb814c0d268b,
+    type: 3}
+  m_terrainHeightsComputeShader: {fileID: 7200000, guid: e1b6904a2218ef847b819dcd8744c599,
+    type: 3}
+  m_currentSizeDivisor: 1
+  m_currentPlayerPrefabName: FlyCam
+  m_flyCamUI: {fileID: 1987081325453708, guid: c22749c16bfe8aa428f5e54cf7cc6505, type: 3}
+  m_currentWaterPrefabName: Water4Advanced
+  m_saveCollisionCacheWhenSaving: 0
+  m_terrainUnloadMemoryTreshold: 4294967296
+  m_worldmapLayer: {fileID: 8574412962073106934, guid: 957ef5b80c80fde429be14ca5eeed1ae,
+    type: 2}
+  m_enableAmbientAudio: 1
+  m_enablePostProcessing: 1
+  m_enableLocationManager: 1
+  m_enableLoadingScreen: 1
+  m_currentPostFX: 0
+  m_currentWater: 0
+  m_currentWaterPro: 1
+  m_enableUnderwaterEffects: 1
+  m_createWind: 1
+  m_windType: 0
+  m_createScreenShotter: 1
+  m_focusPlayerOnSetup: 0
+  m_FPFDefaultThreshold: 5000
+  m_XRControllerPackageName: GaiaXRController.unitypackage
+  m_biomesDirectory: Assets/Gaia User Data/Biomes
+  m_screenshotsDirectory: Assets/Gaia User Data/Screenshots
+  m_sessionsDirectory: Assets/Gaia User Data/Sessions
+  m_userSettingsDirectory: Assets/Gaia User Data/Settings
+  m_userStampsDirectory: Assets/Gaia User Data/Stamps
+  m_actionButtonColor: {r: 0.46666667, g: 0.6666667, b: 0.23529412, a: 1}
+  m_actionButtonProColor: {r: 0.2117647, g: 0.3176471, b: 0.09019608, a: 1}
+  m_stamperPreviewButtonColor: {r: 0.5, g: 0.5, b: 1, a: 1}
+  m_stamperPositiveHeightChangeColor: {r: 0.5611, g: 0.9716, b: 0.5362, a: 1}
+  m_stamperNegativeHeightChangeColor: {r: 0.8, g: 0.8, b: 0.8, a: 1}
+  m_stamperSeaLevelTintColor: {r: 0, g: 0.2151, b: 0.7843, a: 0.5}
+  m_stamperNormalMapColorPower: 0.25
+  m_stamperAutoHidePreviewMilliseconds: 0
+  m_autoTextureTreshold: 250
+  m_defaultStamp: {fileID: 2800000, guid: 6d9b240de494b5b45920af3f965d2a4c, type: 3}
+  m_hideObjectsInHierachy: 0
+  m_spawnerColorGradient:
+    serializedVersion: 2
+    key0: {r: 1, g: 0.010416666, b: 0, a: 1}
+    key1: {r: 1, g: 1, b: 0, a: 1}
+    key2: {r: 0, g: 0.9528313, b: 0.047168657, a: 0}
+    key3: {r: 0, g: 1, b: 1, a: 0}
+    key4: {r: 0, g: 0, b: 1, a: 0}
+    key5: {r: 1, g: 0, b: 1, a: 0}
+    key6: {r: 1, g: 0, b: 1, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 13107
+    ctime2: 26214
+    ctime3: 39321
+    ctime4: 52428
+    ctime5: 65535
+    ctime6: 65535
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 6
+    m_NumAlphaKeys: 2
+  m_spawnerAutoHidePreviewMilliseconds: 0
+  m_spawnerWorldSpawnRange: 1024
+  m_gameObjectCountWarningThreshold: 50
+  m_boxStandInPrefab: {fileID: 2951433226585323638, guid: 7d42c4a23fa92c7479007639ed6e1aec,
+    type: 3}
+  m_publisherName: 
+  m_fpsPlayerPrefabName: FPSController
+  m_3pPlayerPrefabName: ThirdPersonController
+  m_rbPlayerPrefabName: RollerBall
+  m_carPlayerPrefabName: Gaia Car
+  m_waterMobilePrefabName: WaterBasicDaytime
+  m_waterPrefabName: Water4Advanced
+  m_showTooltips: 1
+  m_ultraLightDefaults: {fileID: 11400000, guid: f5d4591d16ae85049a2e06114b74b315,
+    type: 2}
+  m_ultraLightResources:
+    m_resourcesID: ff688872-3839-4dfd-a81a-d31224e00915
+    m_name: Gaia Resource
+    m_beachHeight: 5
+    m_terrainHeight: 1000
+    m_texturePrototypes: []
+    m_detailPrototypes: []
+    m_treePrototypes: []
+    m_gameObjectPrototypes: []
+    m_spawnExtensionPrototypes: []
+    m_stampDistributionPrototypes: []
+    m_worldBiomeMaskPrototypes: []
+    m_probePrototypes: []
+  m_ultraLightGameObjectResources:
+    m_resourcesID: 74ae544a-991b-4613-8ab9-982b43c67280
+    m_name: Gaia Resource
+    m_beachHeight: 5
+    m_terrainHeight: 1000
+    m_texturePrototypes: []
+    m_detailPrototypes: []
+    m_treePrototypes: []
+    m_gameObjectPrototypes: []
+    m_spawnExtensionPrototypes: []
+    m_stampDistributionPrototypes: []
+    m_worldBiomeMaskPrototypes: []
+    m_probePrototypes: []
+  m_mobileDefaults: {fileID: 11400000, guid: 523e7c864412c3144932b865df8adefa, type: 2}
+  m_mobileResources:
+    m_resourcesID: e70ad959-43b7-43b8-a597-0fab0d1015eb
+    m_name: Gaia Resource
+    m_beachHeight: 5
+    m_terrainHeight: 1000
+    m_texturePrototypes: []
+    m_detailPrototypes: []
+    m_treePrototypes: []
+    m_gameObjectPrototypes: []
+    m_spawnExtensionPrototypes: []
+    m_stampDistributionPrototypes: []
+    m_worldBiomeMaskPrototypes: []
+    m_probePrototypes: []
+  m_mobileGameObjectResources:
+    m_resourcesID: 6ecae90e-e328-4b95-8753-ef19a3d71b9e
+    m_name: Gaia Resource
+    m_beachHeight: 5
+    m_terrainHeight: 1000
+    m_texturePrototypes: []
+    m_detailPrototypes: []
+    m_treePrototypes: []
+    m_gameObjectPrototypes: []
+    m_spawnExtensionPrototypes: []
+    m_stampDistributionPrototypes: []
+    m_worldBiomeMaskPrototypes: []
+    m_probePrototypes: []
+  m_desktopDefaults: {fileID: 11400000, guid: 54f4fac3c7f0a1e44a45853d26c87b49, type: 2}
+  m_desktopResources:
+    m_resourcesID: 23b41c66-0dbf-4290-8801-36bf827bc06f
+    m_name: Gaia Resource
+    m_beachHeight: 5
+    m_terrainHeight: 1000
+    m_texturePrototypes: []
+    m_detailPrototypes: []
+    m_treePrototypes: []
+    m_gameObjectPrototypes: []
+    m_spawnExtensionPrototypes: []
+    m_stampDistributionPrototypes: []
+    m_worldBiomeMaskPrototypes: []
+    m_probePrototypes: []
+  m_desktopGameObjectResources:
+    m_resourcesID: f5a5865e-7a9e-4b7a-b762-a3088ed2fe7b
+    m_name: Gaia Resource
+    m_beachHeight: 5
+    m_terrainHeight: 1000
+    m_texturePrototypes: []
+    m_detailPrototypes: []
+    m_treePrototypes: []
+    m_gameObjectPrototypes: []
+    m_spawnExtensionPrototypes: []
+    m_stampDistributionPrototypes: []
+    m_worldBiomeMaskPrototypes: []
+    m_probePrototypes: []
+  m_powerDesktopDefaults: {fileID: 11400000, guid: 8a65cdbd52f405b40a63e6ea9a15a3d8,
+    type: 2}
+  m_powerDesktopResources:
+    m_resourcesID: 0dc526f5-42ab-48b2-b85a-58c719530534
+    m_name: Gaia Resource
+    m_beachHeight: 5
+    m_terrainHeight: 1000
+    m_texturePrototypes: []
+    m_detailPrototypes: []
+    m_treePrototypes: []
+    m_gameObjectPrototypes: []
+    m_spawnExtensionPrototypes: []
+    m_stampDistributionPrototypes: []
+    m_worldBiomeMaskPrototypes: []
+    m_probePrototypes: []
+  m_powerDesktopGameObjectResources:
+    m_resourcesID: 0e2a6669-08e1-4547-b1f1-c4fc14514963
+    m_name: Gaia Resource
+    m_beachHeight: 5
+    m_terrainHeight: 1000
+    m_texturePrototypes: []
+    m_detailPrototypes: []
+    m_treePrototypes: []
+    m_gameObjectPrototypes: []
+    m_spawnExtensionPrototypes: []
+    m_stampDistributionPrototypes: []
+    m_worldBiomeMaskPrototypes: []
+    m_probePrototypes: []
+  m_gaiaLightingProfile: {fileID: 11400000, guid: c885b11c8d7689140aa0826582d822ca,
+    type: 2}
+  m_gaiaWaterProfile: {fileID: 11400000, guid: 8538f7473906d494dbeff74437319b45, type: 2}
+  m_gaiaProURL: https://assetstore.unity.com/packages/tools/terrain/gaia-pro-terrain-scene-generator-155852
+  m_pipelineProfile: {fileID: 11400000, guid: f09b7e32ec1bd7d4e943eac8aa6dc2ee, type: 2}
+  m_terrainOpListPositionType: 0
+  m_terrainOpListPosition: {x: 0, y: 0}
+  m_terrainOpListSizeType: 1
+  m_terrainOpListSize: {x: 22, y: 304.7}
+  m_gaiaPanelPositionType: 1
+  m_gaiaPanelPosition: {x: 50, y: 0}
+  m_gaiaPanelSizeType: 0
+  m_gaiaPanelSize: {x: 360, y: 150}
+  m_gaiaPanelSliderDelay: 1000
+  m_lastWebUpdate: 636867319228043256
+  m_hideHeroMessage: 0
+  m_latestNewsTitle: 'Gaia 1.7: New Tutorials!!'
+  m_latestNewsBody: With the release of Gaia 1.7 we have revamped the entire tutorials
+    section. Please take a moment to check them out!
+  m_latestNewsUrl: http://www.procedural-worlds.com/gaia/?section=tutorials
+  m_latestNewsImage: {fileID: 2800000, guid: 523b3ea42fc6f9548a50f412b38e7b76, type: 3}
+  m_originUIProBackgroundPro: {fileID: 2800000, guid: 789d8da31cb73c34c9e22a5d1dfe52cf,
+    type: 3}
+  m_originUIBackground: {fileID: 2800000, guid: f940990b1c0a0494ea3fdbb7e12f4545,
+    type: 3}
+  m_originUIUnfoldUp: {fileID: 2800000, guid: 17446d66df9c41e4a8ab5b3a717bc177, type: 3}
+  m_originUIUnfoldDown: {fileID: 2800000, guid: afe6ce21d8910664d8fb095e08e840a2,
+    type: 3}
+  m_originUIProUnfoldUp: {fileID: 2800000, guid: a823995320c582d428d940c17ad58737,
+    type: 3}
+  m_originUIProUnfoldDown: {fileID: 2800000, guid: ff91491c385039a42bae5e525dfe1053,
+    type: 3}
+  m_IconCancel: {fileID: 2800000, guid: 3547f5a39a184604f9a999d2359aa06b, type: 3}
+  m_IconCopy: {fileID: 2800000, guid: 4ecbb1a1c978f4249a6ae0149a1aa70d, type: 3}
+  m_IconDown: {fileID: 2800000, guid: ebe894a7d92899b4d909f653929ac4d7, type: 3}
+  m_IconUp: {fileID: 2800000, guid: 93b2ac32425fdf945bf7998ed0aac5b1, type: 3}
+  m_IconDuplicate: {fileID: 2800000, guid: 0039004be6777684c9e2da9b952e6399, type: 3}
+  m_IconPaste: {fileID: 2800000, guid: 9bb9427f21807ec4dbbe1c0a6be4bf20, type: 3}
+  m_IconRemove: {fileID: 2800000, guid: 196e3f24d4a3e564a87302f676ddc259, type: 3}
+  m_IconVisible: {fileID: 2800000, guid: 6db86c72d44e4be4dac460588c4cd482, type: 3}
+  m_IconVisibleDisabled: {fileID: 2800000, guid: d635f83a9bb85674ebc71fb27e05020b,
+    type: 3}
+  m_IconProCancel: {fileID: 2800000, guid: 3547f5a39a184604f9a999d2359aa06b, type: 3}
+  m_IconProCopy: {fileID: 2800000, guid: dba51888017bc674cbab0c470f44851e, type: 3}
+  m_IconProDown: {fileID: 2800000, guid: 38bf995ba8b5c1f488007026c2b2d2bf, type: 3}
+  m_IconProUp: {fileID: 2800000, guid: 36874346d0b2f8047acb04cacfa90aa7, type: 3}
+  m_IconProDuplicate: {fileID: 2800000, guid: 2cb721d49e30ec4429a71be455e7247e, type: 3}
+  m_IconProPaste: {fileID: 2800000, guid: 576a96a4fb00aa040b4c785c8bbb22a8, type: 3}
+  m_IconProRemove: {fileID: 2800000, guid: e6d5d886ca863b7469051f618c8fd75d, type: 3}
+  m_IconProVisible: {fileID: 2800000, guid: 8876b877b7f47e7409f8c59c02af1c69, type: 3}
+  m_IconProVisibleDisabled: {fileID: 2800000, guid: d1219bc2466f17043924b6ad78da44ed,
+    type: 3}

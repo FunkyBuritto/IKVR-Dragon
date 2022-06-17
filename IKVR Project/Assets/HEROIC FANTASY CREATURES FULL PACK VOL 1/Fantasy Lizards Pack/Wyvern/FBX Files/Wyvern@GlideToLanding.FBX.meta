@@ -1,0 +1,272 @@
+fileFormatVersion: 2
+guid: 5c00cbeb8552d344a99859569f6418a6
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: root
+    100002: //RootNode
+    100004: WYVERN_
+    100006: WYVERN_ Head
+    100008: WYVERN_ L Calf
+    100010: WYVERN_ L Clavicle
+    100012: WYVERN_ L Finger0
+    100014: WYVERN_ L Finger01
+    100016: WYVERN_ L Finger02
+    100018: WYVERN_ L Finger1
+    100020: WYVERN_ L Finger11
+    100022: WYVERN_ L Finger12
+    100024: WYVERN_ L Finger2
+    100026: WYVERN_ L Finger21
+    100028: WYVERN_ L Finger22
+    100030: WYVERN_ L Finger3
+    100032: WYVERN_ L Finger31
+    100034: WYVERN_ L Finger32
+    100036: WYVERN_ L Foot
+    100038: WYVERN_ L Forearm
+    100040: WYVERN_ L Hand
+    100042: WYVERN_ L HorseLink
+    100044: WYVERN_ L Thigh
+    100046: WYVERN_ L Toe0
+    100048: WYVERN_ L Toe01
+    100050: WYVERN_ L Toe1
+    100052: WYVERN_ L Toe11
+    100054: WYVERN_ L UpperArm
+    100056: WYVERN_ Neck
+    100058: WYVERN_ Neck1
+    100060: WYVERN_ Neck2
+    100062: WYVERN_ Neck3
+    100064: WYVERN_ Neck4
+    100066: WYVERN_ Neck5
+    100068: WYVERN_ Pelvis
+    100070: WYVERN_ Ponytail1
+    100072: WYVERN_ R Calf
+    100074: WYVERN_ R Clavicle
+    100076: WYVERN_ R Finger0
+    100078: WYVERN_ R Finger01
+    100080: WYVERN_ R Finger02
+    100082: WYVERN_ R Finger1
+    100084: WYVERN_ R Finger11
+    100086: WYVERN_ R Finger12
+    100088: WYVERN_ R Finger2
+    100090: WYVERN_ R Finger21
+    100092: WYVERN_ R Finger22
+    100094: WYVERN_ R Finger3
+    100096: WYVERN_ R Finger31
+    100098: WYVERN_ R Finger32
+    100100: WYVERN_ R Foot
+    100102: WYVERN_ R Forearm
+    100104: WYVERN_ R Hand
+    100106: WYVERN_ R HorseLink
+    100108: WYVERN_ R Thigh
+    100110: WYVERN_ R Toe0
+    100112: WYVERN_ R Toe01
+    100114: WYVERN_ R Toe1
+    100116: WYVERN_ R Toe11
+    100118: WYVERN_ R UpperArm
+    100120: WYVERN_ Spine
+    100122: WYVERN_ Spine1
+    100124: WYVERN_ Spine2
+    100126: WYVERN_ Tail
+    100128: WYVERN_ Tail1
+    100130: WYVERN_ Tail10
+    100132: WYVERN_ Tail11
+    100134: WYVERN_ Tail2
+    100136: WYVERN_ Tail3
+    100138: WYVERN_ Tail4
+    100140: WYVERN_ Tail5
+    100142: WYVERN_ Tail6
+    100144: WYVERN_ Tail7
+    100146: WYVERN_ Tail8
+    100148: WYVERN_ Tail9
+    400000: root
+    400002: //RootNode
+    400004: WYVERN_
+    400006: WYVERN_ Head
+    400008: WYVERN_ L Calf
+    400010: WYVERN_ L Clavicle
+    400012: WYVERN_ L Finger0
+    400014: WYVERN_ L Finger01
+    400016: WYVERN_ L Finger02
+    400018: WYVERN_ L Finger1
+    400020: WYVERN_ L Finger11
+    400022: WYVERN_ L Finger12
+    400024: WYVERN_ L Finger2
+    400026: WYVERN_ L Finger21
+    400028: WYVERN_ L Finger22
+    400030: WYVERN_ L Finger3
+    400032: WYVERN_ L Finger31
+    400034: WYVERN_ L Finger32
+    400036: WYVERN_ L Foot
+    400038: WYVERN_ L Forearm
+    400040: WYVERN_ L Hand
+    400042: WYVERN_ L HorseLink
+    400044: WYVERN_ L Thigh
+    400046: WYVERN_ L Toe0
+    400048: WYVERN_ L Toe01
+    400050: WYVERN_ L Toe1
+    400052: WYVERN_ L Toe11
+    400054: WYVERN_ L UpperArm
+    400056: WYVERN_ Neck
+    400058: WYVERN_ Neck1
+    400060: WYVERN_ Neck2
+    400062: WYVERN_ Neck3
+    400064: WYVERN_ Neck4
+    400066: WYVERN_ Neck5
+    400068: WYVERN_ Pelvis
+    400070: WYVERN_ Ponytail1
+    400072: WYVERN_ R Calf
+    400074: WYVERN_ R Clavicle
+    400076: WYVERN_ R Finger0
+    400078: WYVERN_ R Finger01
+    400080: WYVERN_ R Finger02
+    400082: WYVERN_ R Finger1
+    400084: WYVERN_ R Finger11
+    400086: WYVERN_ R Finger12
+    400088: WYVERN_ R Finger2
+    400090: WYVERN_ R Finger21
+    400092: WYVERN_ R Finger22
+    400094: WYVERN_ R Finger3
+    400096: WYVERN_ R Finger31
+    400098: WYVERN_ R Finger32
+    400100: WYVERN_ R Foot
+    400102: WYVERN_ R Forearm
+    400104: WYVERN_ R Hand
+    400106: WYVERN_ R HorseLink
+    400108: WYVERN_ R Thigh
+    400110: WYVERN_ R Toe0
+    400112: WYVERN_ R Toe01
+    400114: WYVERN_ R Toe1
+    400116: WYVERN_ R Toe11
+    400118: WYVERN_ R UpperArm
+    400120: WYVERN_ Spine
+    400122: WYVERN_ Spine1
+    400124: WYVERN_ Spine2
+    400126: WYVERN_ Tail
+    400128: WYVERN_ Tail1
+    400130: WYVERN_ Tail10
+    400132: WYVERN_ Tail11
+    400134: WYVERN_ Tail2
+    400136: WYVERN_ Tail3
+    400138: WYVERN_ Tail4
+    400140: WYVERN_ Tail5
+    400142: WYVERN_ Tail6
+    400144: WYVERN_ Tail7
+    400146: WYVERN_ Tail8
+    400148: WYVERN_ Tail9
+    7400000: GlideToLanding
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 0
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: GlideToLanding
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 70
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 1
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: root
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: d5c39bee3007be043b818b51344b7d66,
+    type: 3}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

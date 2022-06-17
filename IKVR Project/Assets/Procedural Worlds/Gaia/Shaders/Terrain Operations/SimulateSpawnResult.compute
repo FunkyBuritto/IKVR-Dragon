@@ -1,0 +1,39 @@
+﻿// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel CSMain
+
+// Create a RenderTexture with enableRandomWrite flag and set it
+// with cs.SetTexture
+
+struct TerrainPosition
+{
+	int terrainID;
+	uint2 min;
+    uint2 max;
+    int affected;
+};
+
+
+Texture2D<float4> Input;
+RWStructuredBuffer<TerrainPosition>outputBuffer;
+float fitnessThreshold;
+int testInt;
+int numberOfTerrains = 0;
+
+[numthreads(8,8,1)]
+void CSMain (uint3 id : SV_DispatchThreadID)
+{
+    if(Input[id.xy].r>fitnessThreshold)
+    {
+        for(int i=0;i<numberOfTerrains;i++)
+        {
+            TerrainPosition currentPos = outputBuffer[i];
+            if( id.x >= currentPos.min.x && 
+                id.y >= currentPos.min.y &&
+                id.x <= currentPos.max.x && 
+                id.y <= currentPos.max.y )
+                {
+                    outputBuffer[i].affected = 1;
+                }
+        }
+    }
+}

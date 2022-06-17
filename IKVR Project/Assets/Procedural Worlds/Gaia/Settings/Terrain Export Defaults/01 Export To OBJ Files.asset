@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21e8ff62d6df01841b560dfaec24f3a7, type: 3}
+  m_Name: 01 Export To OBJ Files
+  m_EditorClassIdentifier: 
+  m_sourceTerrainTreatment: 0
+  m_saveFormat: 0
+  m_addMeshCollider: 0
+  m_addMeshColliderImpostor: 0
+  m_exportSelection: 0
+  m_terrainExportMask: {fileID: 0}
+  m_terrainExportMaskChannel: 0
+  m_terrainExportInvertMask: 0
+  m_copyGaiaGameObjects: 0
+  m_copyGaiaGameObjectsImpostor: 0
+  m_convertSourceTerrains: 1
+  m_convertSourceTerrainsAction: 2
+  m_colliderExportResolution: 0
+  m_colliderExportAddTreeColliders: 1
+  m_colliderExportAddGameObjectColliders: 1
+  m_colliderExportCreateColliderScenes: 1
+  m_colliderExportBakeCombinedCollisionMesh: 0
+  m_createImpostorScenes: 0
+  m_exportTerrainLODSettingsSourceTerrains:
+  - m_saveResolution: 2
+    m_normalEdgeMode: 1
+    m_LODSettingsMode: 1
+    m_settingsFoldedOut: 0
+    m_exportTextures: 1
+    m_exportNormalMaps: 0
+    m_exportSplatmaps: 0
+    m_createMaterials: 1
+    m_materialShader: 1
+    m_bakeVertexColors: 1
+    m_VertexColorSmoothing: 3
+    m_bakeLayerMask:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    m_textureExportMethod: 1
+    m_addAlphaChannel: 0
+    m_textureExportResolution: 2048
+    m_bakeLighting: 0
+    namePrefix: LOD0_
+    m_captureBaseMapTextures: 0
+    m_LODGroupScreenRelativeTransitionHeight: 0.8
+  m_exportTerrainLODSettingsImpostors:
+  - m_saveResolution: 0
+    m_normalEdgeMode: 0
+    m_LODSettingsMode: 2
+    m_settingsFoldedOut: 1
+    m_exportTextures: 0
+    m_exportNormalMaps: 0
+    m_exportSplatmaps: 0
+    m_createMaterials: 0
+    m_materialShader: 1
+    m_bakeVertexColors: 1
+    m_VertexColorSmoothing: 3
+    m_bakeLayerMask:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    m_textureExportMethod: 1
+    m_addAlphaChannel: 0
+    m_textureExportResolution: 2048
+    m_bakeLighting: 0
+    namePrefix: LOD0_
+    m_captureBaseMapTextures: 0
+    m_LODGroupScreenRelativeTransitionHeight: 0.8
+  m_exportPath: Assets/Gaia User Data/Sessions/GS-20201128 - 214319/Exports/Mesh
+    Terrains
+  m_newExportPreset: 1
+  m_customSettingsFoldedOut: 1
+  m_presetIndex: 7
+  m_lastUsedPresetName: Custom

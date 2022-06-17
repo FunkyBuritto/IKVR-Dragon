@@ -1,0 +1,153 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8adaa3bf704c76242af3ea9696646ba5, type: 3}
+  m_Name: Unity Pipeline Gaia Profile
+  m_EditorClassIdentifier: 
+  m_activePipelineInstalled: 0
+  m_gaiaSettings: {fileID: 11400000, guid: e5e08dbecfb165f4daecedc278cfeae2, type: 2}
+  m_editorUpdates: 1
+  m_pipelineSwitchUpdates: 0
+  m_underwaterHorizonMaterial: {fileID: 2100000, guid: 7b54c5a4852b8714b9aebfe5460616ab,
+    type: 2}
+  m_builtInHorizonObjectShader: Standard
+  m_builtInTerrainMaterial: {fileID: 2100000, guid: c34e9b39a9465ca4985770b9dd3d7137,
+    type: 2}
+  m_BuiltInAutoConfigureWater: 1
+  m_universalPipelineProfiles:
+  - m_unityVersion: 2
+    m_pipelineAssetName: UPRenderPipelineAsset PWS UP 7.2.0
+    m_minURPVersion: 7.2.0
+    m_maxURPVersion: 7.3.1
+    m_minHDRPVersion: 7.2.0
+    m_maxHDRPVersion: 7.3.1
+  - m_unityVersion: 3
+    m_pipelineAssetName: UPRenderPipelineAsset PWS UP 7.2.0
+    m_minURPVersion: 7.4.1
+    m_maxURPVersion: 7.4.1
+    m_minHDRPVersion: 7.4.1
+    m_maxHDRPVersion: 7.4.1
+  - m_unityVersion: 4
+    m_pipelineAssetName: UPRenderPipelineAsset PWS UP 8.2.0
+    m_minURPVersion: 8.2.0
+    m_maxURPVersion: 8.2.0
+    m_minHDRPVersion: 8.2.0
+    m_maxHDRPVersion: 8.2.0
+  - m_unityVersion: 5
+    m_pipelineAssetName: UPRenderPipelineAsset PWS UP 8.2.0
+    m_minURPVersion: 10.0.0
+    m_maxURPVersion: 10.1.0
+    m_minHDRPVersion: 10.0.0
+    m_maxHDRPVersion: 10.1.0
+  m_universalScriptDefine: UPPipeline
+  m_universalHorizonObjectShader: Universal Render Pipeline/Lit
+  m_universalTerrainMaterial: {fileID: 2100000, guid: 88b64cc0a6f1e334295cd8ed94f6c309,
+    type: 2}
+  m_setUPPipelineProfile: 1
+  m_UPAutoConfigureTerrain: 1
+  m_UPAutoConfigureWater: 1
+  m_UPAutoConfigureCamera: 1
+  m_UPAutoConfigureProbes: 1
+  m_UPAutoConfigureLighting: 1
+  m_UPAutoConfigureBiomePostFX: 1
+  m_lightweightPipelineProfiles:
+  - m_unityVersion: 0
+    m_pipelineAssetName: LWRenderPipelineAsset PWS LW 5.7.2
+    m_minURPVersion: 5.7.2
+    m_maxURPVersion: 5.13.0
+    m_minHDRPVersion: 5.7.2
+    m_maxHDRPVersion: 5.13.0
+  - m_unityVersion: 1
+    m_pipelineAssetName: LWRenderPipelineAsset PWS LW 6.9.1
+    m_minURPVersion: 5.7.2
+    m_maxURPVersion: 5.13.0
+    m_minHDRPVersion: 5.7.2
+    m_maxHDRPVersion: 5.13.0
+  m_lightweightScriptDefine: LWPipeline
+  m_lightweightHorizonObjectShader: Lightweight Render Pipeline/Lit
+  m_lightweightTerrainMaterial: {fileID: 2100000, guid: 88b64cc0a6f1e334295cd8ed94f6c309,
+    type: 2}
+  m_setLWPipelineProfile: 1
+  m_LWAutoConfigureTerrain: 1
+  m_LWAutoConfigureWater: 1
+  m_LWAutoConfigureCamera: 1
+  m_LWAutoConfigureProbes: 1
+  m_LWAutoConfigureLighting: 1
+  m_highDefinitionPipelineProfiles:
+  - m_unityVersion: 2
+    m_pipelineAssetName: HDRenderPipelineAsset PWS HD 7.2.0
+    m_minURPVersion: 7.2.0
+    m_maxURPVersion: 7.3.1
+    m_minHDRPVersion: 7.2.0
+    m_maxHDRPVersion: 7.3.1
+  - m_unityVersion: 3
+    m_pipelineAssetName: HDRenderPipelineAsset PWS HD 7.2.0
+    m_minURPVersion: 7.4.1
+    m_maxURPVersion: 7.4.1
+    m_minHDRPVersion: 7.4.1
+    m_maxHDRPVersion: 7.4.1
+  - m_unityVersion: 4
+    m_pipelineAssetName: HDRenderPipelineAsset PWS HD 7.2.0
+    m_minURPVersion: 8.2.0
+    m_maxURPVersion: 8.2.0
+    m_minHDRPVersion: 8.2.0
+    m_maxHDRPVersion: 8.2.0
+  - m_unityVersion: 5
+    m_pipelineAssetName: HDRenderPipelineAsset PWS HD 7.2.0
+    m_minURPVersion: 10.0.0
+    m_maxURPVersion: 10.1.0
+    m_minHDRPVersion: 10.0.0
+    m_maxHDRPVersion: 10.1.0
+  m_highDefinitionScriptDefine: HDPipeline
+  m_highDefinitionHorizonObjectShader: HDRP/Lit
+  m_highDefinitionTerrainMaterial: {fileID: 2100000, guid: 7ddb07f91da7065499ff7264dd026365,
+    type: 2}
+  m_HDVolumeObjectName: HD Environment Volume
+  m_HDPostVolumeObjectName: HD Post Processing Environment Volume
+  m_HDDefaultPostProcessing: 2019_3 Default HDRP Post Processing Profile
+  m_HDDefaultSceneLighting: Gaia Default HDRP Lighting
+  m_2019_3HDDefaultSceneLighting: Gaia Default HDRP Lighting
+  m_HDSceneLighting: HD Volume Profile
+  m_2019_3HDSceneLighting: 2019_3 Lighting Profile HD
+  m_setHDPipelineProfile: 1
+  m_HDAutoConfigureTerrain: 1
+  m_HDAutoConfigureWater: 1
+  m_HDAutoConfigureCamera: 1
+  m_HDAutoConfigureProbes: 1
+  m_HDAutoConfigureLighting: 1
+  m_HDDisableTerrainDetails: 1
+  m_HDAutoConfigureBiomePostFX: 1
+  m_ShaderMappingLibrary:
+  - m_builtInShaderName: PWS/PW_General_Forward
+    m_URPReplacementShaderName: Shader Graphs/PW_General_ShaderGraph_URP
+    m_HDRPReplacementShaderName: Shader Graphs/PW_General_ShaderGraph_HDRP
+  - m_builtInShaderName: PWS/PW_General_Deferred
+    m_URPReplacementShaderName: Shader Graphs/PW_General_ShaderGraph_URP
+    m_HDRPReplacementShaderName: Shader Graphs/PW_General_ShaderGraph_HDRP
+  m_packageSetupSettings:
+  - m_version: 2019.1
+    m_isSupported: 0
+    m_unityVersion: 0
+  - m_version: 2019.2
+    m_isSupported: 0
+    m_unityVersion: 1
+  - m_version: 2019.3
+    m_isSupported: 1
+    m_unityVersion: 2
+  - m_version: 2019.4
+    m_isSupported: 1
+    m_unityVersion: 3
+  - m_version: 2020.1
+    m_isSupported: 1
+    m_unityVersion: 4
+  - m_version: 2020.2
+    m_isSupported: 1
+    m_unityVersion: 5

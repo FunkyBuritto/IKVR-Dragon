@@ -1,0 +1,18 @@
+Gaia is being sold and licensed to the end user under the Unity asset store license: https://unity3d.com/legal/as_terms.
+
+Portions of this asset were created under usage of additional resources provided by Unity. The files found in the following folders are governed by additional licenses:
+
+Folder: 
+Procedural Worlds\Gaia\Shaders\Unity\Standard Shaders
+Derived from the Unity Standard Shaders package obtainable from: https://unity3d.com/get-unity/download/archive
+License: see Procedural Worlds\Gaia\Shaders\Unity\Standard Shaders\license.txt
+
+Folders: 
+Procedural Worlds\Gaia\Shaders\Unity\Terrain Tools
+Procedural Worlds\Gaia\Scripts\Unity\Terrain Tools
+Procedural Worlds\Gaia\Gaia Pro\Scripts\Unity\Terrain Tools
+Procedural Worlds\Gaia\Gaia Pro\Shaders\Unity\Terrain Tools
+Derived from the Unity Terrain Tools Package
+License: Unity Companion License - https://unity3d.com/legal/licenses/Unity_Companion_License
+A full "offline" copy of this license can be found in this folders as well.
+

@@ -1,0 +1,115 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: GaiaScannerMaterial
+  m_Shader: {fileID: 4800000, guid: 676d51a93fad6434bb7ee1f64ad89551, type: 3}
+  m_ShaderKeywords: _ALPHATEST_OFF
+  m_LightmapFlags: 0
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 2000
+  stringTagMap: {}
+  disabledShaderPasses:
+  - DistortionVectors
+  - TransparentDepthPrepass
+  - TransparentDepthPostpass
+  - TransparentBackface
+  - MOTIONVECTORS
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 7bc55a021f626444a885bd868b508d00, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _PW_CoverLayer0:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _PW_CoverLayer0Normal:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _PW_CoverLayer1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _PW_CoverLayer1Normal:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _PW_WorldMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _ALPHATEST: 0
+    - _AOPower: 1
+    - _AOPowerExp: 1
+    - _AOVertexMask: 1
+    - _AlphaTest: 0
+    - _BumpMapScale: 1
+    - _CullMode: 2
+    - _Cutoff: 0.5
+    - _Glossiness: 0
+    - _Metallic: 0
+    - _PW_CoverLayer0AlphaClamp: 1
+    - _PW_CoverLayer0Edge: 0.1
+    - _PW_CoverLayer0FadeDist: 0
+    - _PW_CoverLayer0FadeStart: 0
+    - _PW_CoverLayer0Metallic: 0.2
+    - _PW_CoverLayer0NormalScale: 1
+    - _PW_CoverLayer0Progress: 0
+    - _PW_CoverLayer0Smoothness: 0.75
+    - _PW_CoverLayer0Tiling: 64
+    - _PW_CoverLayer0Wrap: 0
+    - _PW_CoverLayer1AlphaClamp: 1
+    - _PW_CoverLayer1Edge: 0.1
+    - _PW_CoverLayer1FadeDist: 0
+    - _PW_CoverLayer1FadeStart: 0
+    - _PW_CoverLayer1Metallic: 0.2
+    - _PW_CoverLayer1NormalScale: 1
+    - _PW_CoverLayer1Progress: 0
+    - _PW_CoverLayer1Smoothness: 0.75
+    - _PW_CoverLayer1Tiling: 64
+    - _PW_CoverLayer1Wrap: 0
+    - _PW_GlobalControl: 1
+    - _PW_Global_SeasonalTintAmount: 0
+    - _PW_SF_BILLBOARD: 0
+    - _PW_SF_COVER: 0
+    - _PW_SF_SSS: 0
+    - _PW_SF_WIND: 0
+    - _PW_SF_WORLDMAP: 0
+    - _PW_SSSDistortion: 0.5
+    - _PW_SSSPower: 1
+    - _PW_ShaderID: 2
+    - _PW_ShaderMode: 0
+    - _PW_TerrainSizeX: 2048
+    - _PW_TerrainSizeZ: 2048
+    - _PW_WorldMapUVScale: 1
+    - _WrapLighting: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _PW_CoverLayer0Color: {r: 1, g: 1, b: 1, a: 1}
+    - _PW_CoverLayer1Color: {r: 1, g: 1, b: 1, a: 1}
+    - _PW_SSSTint: {r: 1, g: 1, b: 1, a: 1}
+    - _PW_WindTreeFlex: {r: 0.8, g: 1.15, b: 0.1, a: 0}
+    - _PW_WindTreeFrequency: {r: 0.25, g: 0.5, b: 1.3, a: 0}
+    - _PW_WindTreeWidthHeight: {r: 4, g: 8, b: 0, a: 0}
+    - _PW_WorldMapColorCover0: {r: 1, g: 1, b: 1, a: 1}
+    - _PW_WorldMapColorCover1: {r: 1, g: 1, b: 1, a: 1}
+    - _PW_WorldMapColorObject: {r: 1, g: 1, b: 1, a: 1}
