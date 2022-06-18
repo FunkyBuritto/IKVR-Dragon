@@ -4,185 +4,156 @@ using UnityEngine;
 
 public class VRMovement : MonoBehaviour
 {
-    //public static Gesture[] gestures = new Gesture[18];
-    //public static GameObject[] leftObject = new GameObject[9];//topMidL, topFrontL, topBackL, midL, frontL, backL, bottomMidL, bottomFrontL, BottomBackL
-    //public static GameObject[] rightObject = new GameObject[9];// topMidR, topFrontR, topBackR, midR, frontR, backR, bottomMidR, bottomFrontR, BottomBackR;
-
     private GameObject leftAnchor;
     private GameObject rightAnchor;
     private GameObject Cam;
 
-    public GameObject leftController;
-    public GameObject rightController;
-    public GameObject dragonHolder;
-
     private Rigidbody rb;
 
-    public float flapForce;
-    public float moveForce;
-    public float glideForce;
-    public float turnSpeed;
-    private float glideEffectiveness;
+    [Header("GameObjects")]
+    [SerializeField] private GameObject leftController;
+    [SerializeField] private GameObject rightController;
+    [SerializeField] private GameObject dragonObject;
+    [SerializeField] private GameObject visualiserObject;
+
+    [Header("Movement")]
+    [SerializeField][Tooltip("The upwards force that applies when you flap your wings")] 
+    private float flapForce;
+
+    [SerializeField][Tooltip("The forwards force that applies when you flap your wings")] 
+    private float moveForce;
+
+    [SerializeField][Tooltip("The forwards force that applies when you glide")]         
+    private float glideForce;
+
+    [SerializeField][Tooltip("The speed at wich the dragon moddel follows the players view")] 
+    private float rotationSpeed;
 
     private bool leftGlide;
     private bool rightGlide;
+    private float glideEffectiveness;
     private bool cooldown = false;
     private bool leftTop, leftBotom, rightTop, rightBotom;
-    public bool leftFlap, rightFlap;
+    private bool leftFlap, rightFlap;
 
-    // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
+        // Find the reference points for the flap/glide heights
         leftAnchor = GameObject.Find("LeftGestures");
         rightAnchor = GameObject.Find("RightGestures");
+
+        // Assign the rigidbody and camera
         rb = gameObject.GetComponent<Rigidbody>();
         Cam = Camera.main.gameObject;
-
-        /*
-        leftObject[8] = GameObject.Find("TopMidL");
-        leftObject[2] = GameObject.Find("BottomMidL");
-        rightObject[8] = GameObject.Find("TopMidR");
-        rightObject[2] = GameObject.Find("BottomMidR");
-        LinkGestures(8, true);
-        LinkGestures(2, true);
-        LinkGestures(8, false);
-        LinkGestures(2, false);
-        */
     }
 
-    // Update is called once per frame
-    void Update()
-    {
+    void Update() {
+        // Set the rotation and position of the dragon so they folow the players position and view rotation smoothly.
+        dragonObject.transform.rotation = Quaternion.LerpUnclamped(dragonObject.transform.rotation, Cam.transform.localRotation, Time.deltaTime * rotationSpeed);
+        dragonObject.transform.position = transform.position + Vector3.up * 1.4f;
 
-        if (leftAnchor.transform.position.y - leftController.transform.position.y < 0.2f && leftAnchor.transform.position.y - leftController.transform.position.y > -0.2f)
-        {
+        // Set the rotation of the visualiser to always rotate around the players y view axis.
+        visualiserObject.transform.rotation = new Quaternion(0, Mathf.Lerp(visualiserObject.transform.rotation.y, Cam.transform.localRotation.y, Time.deltaTime * rotationSpeed), 0, 0);
+        
+        // Check if the left controllers height is between two heights and set the leftGlide variable true or false depending on that.
+        if (leftAnchor.transform.position.y - leftController.transform.position.y < 0.2f && leftAnchor.transform.position.y - leftController.transform.position.y > -0.2f) {
             leftGlide = true;
             glideEffectiveness = Mathf.Abs((rightAnchor.transform.position.y - rightController.transform.position.y) + (leftAnchor.transform.position.y - leftController.transform.position.y));
         }
-        else
-        {
+        else {
             leftGlide = false;
             glideEffectiveness = 0;
         }
 
-        if (rightAnchor.transform.position.y - rightController.transform.position.y < 0.2f && rightAnchor.transform.position.y - rightController.transform.position.y > -0.2f)
-        {
+        // Check if the right controllers height is between two heights and set the rightGlide variable true or false depending on that.
+        if (rightAnchor.transform.position.y - rightController.transform.position.y < 0.2f && rightAnchor.transform.position.y - rightController.transform.position.y > -0.2f) {
             rightGlide = true;
             glideEffectiveness = Mathf.Abs((rightAnchor.transform.position.y - rightController.transform.position.y) + (leftAnchor.transform.position.y - leftController.transform.position.y));
         }
-        else
-        {
+        else {
             rightGlide = false;
             glideEffectiveness = 0;
         }
 
-        if (leftGlide && rightGlide)
-            Glide();
+        if (leftGlide && rightGlide) Glide();
 
-
+        // If the left controller is above a certain height start the LeftTopFlapping coroutine
         if (leftAnchor.transform.position.y - leftController.transform.position.y < -0.3f)
             StartCoroutine(LeftTopFlapping());
 
+        // If the right controller is above a certain height start the LeftTopFlapping coroutine
         if (rightAnchor.transform.position.y - rightController.transform.position.y < -0.3f)
             StartCoroutine(RightTopFlapping());
 
-        if (!cooldown)
-        {
-            if (leftAnchor.transform.position.y - leftController.transform.position.y > 0.3f)
-                leftBotom = true;
-            else
-                leftBotom = false;
+        // If the player did not just flap his wings
+        if (!cooldown) {
+            // Set leftbottom boolean to a true or false depending on if the left controller is below a certain height
+            if (leftAnchor.transform.position.y - leftController.transform.position.y > 0.3f) leftBotom = true;
+            else leftBotom = false;
 
-            if (rightAnchor.transform.position.y - rightController.transform.position.y > 0.3f)
-                rightBotom = true;
-            else
-                rightBotom = false;
+            // Set rightBotom boolean to a true or false depending on if the left controller is below a certain height
+            if (rightAnchor.transform.position.y - rightController.transform.position.y > 0.3f) rightBotom = true;
+            else rightBotom = false;
 
-            if (leftTop && leftBotom)
-                StartCoroutine(LeftFlapTime());
+            // If the player has leftTop and LeftBottom active start the LeftFlapTime Coroutine wich enables and disables leftFlap
+            if (leftTop && leftBotom) StartCoroutine(LeftFlapTime());
 
-            if (rightTop && rightBotom)
-                StartCoroutine(RightFlapTime());
+            // If the player has leftTop and LeftBottom active start the RightFlapTime Coroutine wich enables and disables rightFlap
+            if (rightTop && rightBotom) StartCoroutine(RightFlapTime());
 
-            if (leftFlap && rightFlap)
-                Flap();
+            // Succesfully flaped whings if left and right flap are equal to true
+            if (leftFlap && rightFlap) Flap();
         }
     }
 
-    void Glide()
-    {
-        rb.velocity = new Vector3(rb.velocity.x, Mathf.Clamp(rb.velocity.y + (-0.4f + glideEffectiveness), -0.1f, 50), rb.velocity.z);
+    void Glide() {
+        // Set the y velocity to value between -0.1f and 50f based on how horizontal the controllers are
+        rb.velocity = new Vector3(rb.velocity.x, Mathf.Clamp(rb.velocity.y + (-0.4f + glideEffectiveness), -0.1f, 50f), rb.velocity.z);
+
+        // Add extra velocity forward relative to the players view
         rb.velocity += (Cam.transform.rotation * Vector3.forward) * glideForce;
-        dragonHolder.transform.rotation = Quaternion.LerpUnclamped(dragonHolder.transform.rotation, Cam.transform.rotation, turnSpeed);
     }
 
-    void Flap()
-    {
+    void Flap() {
+        // Add vertical force to the current velocity
         rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y + flapForce, rb.velocity.z);
-        rb.velocity += (Cam.transform.rotation * Vector3.forward) * moveForce;//Vector3.forward * moveForce;//
+
+        // Add extra velocity forward relative to the players view
+        rb.velocity += (Cam.transform.rotation * Vector3.forward) * moveForce;
+
+        // Flapped succesfully so disable left and right flap
         leftFlap = false;
         rightFlap = false;
+
+        // Set a cooldown so you can't spam your flaps
         StartCoroutine(CooldownTimer());
     }
 
-    IEnumerator CooldownTimer()
-    {
+    // Cooldown so the player can't spam
+    IEnumerator CooldownTimer() {
         cooldown = true;
         yield return new WaitForSeconds(0.7f);
         cooldown = false;
     }
-    IEnumerator LeftTopFlapping()
-    {
+
+    // All the bellow add extra time for the player to flap so its easyer to succesfully flap
+    IEnumerator LeftTopFlapping() {
         leftTop = true;
         yield return new WaitForSeconds(0.7f);
         leftTop = false;
     }
-    IEnumerator RightTopFlapping()
-    {
+    IEnumerator RightTopFlapping() {
         rightTop = true;
         yield return new WaitForSeconds(0.7f);
         rightTop = false;
     }
-
-    IEnumerator LeftFlapTime()
-    {
+    IEnumerator LeftFlapTime() {
         leftFlap = true;
         yield return new WaitForSeconds(0.5f);
         leftFlap = false;
     }
-    IEnumerator RightFlapTime()
-    {
+    IEnumerator RightFlapTime() {
         rightFlap = true;
         yield return new WaitForSeconds(0.5f);
         rightFlap = false;
     }
-    /*
-
-    void LinkGestures(int objnumber, bool isleft)
-    {
-        int number = objnumber;
-        if (!isleft) 
-        {
-            number += 8;
-            gestures[number].parrent = rightObject[objnumber];
-        }
-        else
-            gestures[number].parrent = leftObject[objnumber];
-        gestures[number].id = new char[1];
-        gestures[number].id[0] = objnumber.ToString()[0];
-        gestures[number].isleft = isleft;
-
-        Debug.Log(gestures[number].parrent);
-        Debug.Log(string.Format("Gesture Succsessfully Linked, GestureID: {0} GestureIsLeft: {1}", gestures[number].id, gestures[number].isleft));
-    }
-
-    public struct Gesture
-    {
-        public char[] id;
-        public bool isleft;
-        public bool isHit;
-        public float timeHit;
-        public GameObject parrent;
-    }
-    */
 }
