@@ -5,7 +5,6 @@ using UnityEngine;
 public class VRMovement : MonoBehaviour
 {
     private Vector3 targetVelocity;
-    private Vector3 forwardVelocity;
 
     private GameObject leftAnchor;
     private GameObject rightAnchor;
@@ -20,6 +19,9 @@ public class VRMovement : MonoBehaviour
     [SerializeField] private GameObject visualiserObject;
 
     [Header("Movement")]
+    [SerializeField] [Tooltip("The speed at which the player changes velocity between directions, glide and flapping his wings")]
+    private float moveTransition;
+
     [SerializeField][Tooltip("The upwards force that applies when you flap your wings")] 
     private float flapForce;
 
@@ -108,21 +110,31 @@ public class VRMovement : MonoBehaviour
         }
     }
 
+    private void FixedUpdate() {
+        Vector3 forwardVelocity = new Vector3(targetVelocity.x * Cam.transform.forward.x, targetVelocity.y * Cam.transform.forward.y, targetVelocity.z * Cam.transform.forward.z);
+        rb.velocity = Vector3.Lerp(rb.velocity, forwardVelocity, Time.deltaTime * moveTransition);
+    }
+
     void Glide() {
+        targetVelocity = new Vector3(rb.velocity.x, Mathf.Clamp(rb.velocity.y + (-0.4f + glideEffectiveness), -0.1f, 50f), rb.velocity.z) + (Cam.transform.forward * glideForce);
+        /*
         // Set the y velocity to value between -0.1f and 50f based on how horizontal the controllers are
         rb.velocity = new Vector3(rb.velocity.x, Mathf.Clamp(rb.velocity.y + (-0.4f + glideEffectiveness), -0.1f, 50f), rb.velocity.z);
 
         // Add extra velocity forward relative to the players view
         rb.velocity += (Cam.transform.rotation * Vector3.forward) * glideForce;
+        */
     }
 
     void Flap() {
+        targetVelocity = new Vector3(rb.velocity.x, rb.velocity.y + flapForce, rb.velocity.z) + (Cam.transform.forward * moveForce);
+        /*
         // Add vertical force to the current velocity
         rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y + flapForce, rb.velocity.z);
 
         // Add extra velocity forward relative to the players view
         rb.velocity += (Cam.transform.rotation * Vector3.forward) * moveForce;
-
+        */
         // Flapped succesfully so disable left and right flap
         leftFlap = false;
         rightFlap = false;
