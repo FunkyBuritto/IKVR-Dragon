@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class VRMovement : MonoBehaviour
 {
+    private Vector3 targetVelocity;
+    private Vector3 forwardVelocity;
+
     private GameObject leftAnchor;
     private GameObject rightAnchor;
     private GameObject Cam;
