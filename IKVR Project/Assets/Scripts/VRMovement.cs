@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class VRMovement : MonoBehaviour
 {
-    private Vector3 targetVelocity;
+    [SerializeField] private Vector3 targetVelocity;
+    [SerializeField] private Vector3 forwardVelocity;
+    private float camAngle;
 
     private GameObject leftAnchor;
     private GameObject rightAnchor;
@@ -19,8 +21,17 @@ public class VRMovement : MonoBehaviour
     [SerializeField] private GameObject visualiserObject;
 
     [Header("Movement")]
-    [SerializeField] [Tooltip("The speed at which the player changes velocity between directions, glide and flapping his wings")]
-    private float moveTransition;
+    [SerializeField] [Tooltip("The speed at which the player changes velocity between directions when gliding")]
+    private float glideTransition;
+
+    [SerializeField] [Tooltip("The speed at which the player changes velocity between directions when flapping his wings")]
+    private float flapTransition;
+
+    [SerializeField] [Tooltip("The speed at which the player constantly slows down in the forward direction")]
+    private float horizontalDrag;
+
+    [SerializeField] [Tooltip("The speed at which the player constantly moves down")]
+    private float gravity;
 
     [SerializeField][Tooltip("The upwards force that applies when you flap your wings")] 
     private float flapForce;
@@ -31,7 +42,7 @@ public class VRMovement : MonoBehaviour
     [SerializeField][Tooltip("The forwards force that applies when you glide")]         
     private float glideForce;
 
-    [SerializeField][Tooltip("The speed at wich the dragon moddel follows the players view")] 
+    [SerializeField][Tooltip("The speed at wich the dragon model follows the players view")] 
     private float rotationSpeed;
 
     private bool leftGlide;
@@ -58,7 +69,7 @@ public class VRMovement : MonoBehaviour
 
         // Set the rotation of the visualiser to always rotate around the players y view axis.
         visualiserObject.transform.rotation = new Quaternion(0, Mathf.Lerp(visualiserObject.transform.rotation.y, Cam.transform.localRotation.y, Time.deltaTime * rotationSpeed), 0, 0);
-        
+
         // Check if the left controllers height is between two heights and set the leftGlide variable true or false depending on that.
         if (leftAnchor.transform.position.y - leftController.transform.position.y < 0.2f && leftAnchor.transform.position.y - leftController.transform.position.y > -0.2f) {
             leftGlide = true;
@@ -80,6 +91,7 @@ public class VRMovement : MonoBehaviour
         }
 
         if (leftGlide && rightGlide) Glide();
+
 
         // If the left controller is above a certain height start the LeftTopFlapping coroutine
         if (leftAnchor.transform.position.y - leftController.transform.position.y < -0.3f)
@@ -108,33 +120,35 @@ public class VRMovement : MonoBehaviour
             // Succesfully flaped whings if left and right flap are equal to true
             if (leftFlap && rightFlap) Flap();
         }
-    }
 
-    private void FixedUpdate() {
-        Vector3 forwardVelocity = new Vector3(targetVelocity.x * Cam.transform.forward.x, targetVelocity.y * Cam.transform.forward.y, targetVelocity.z * Cam.transform.forward.z);
-        rb.velocity = Vector3.Lerp(rb.velocity, forwardVelocity, Time.deltaTime * moveTransition);
+        // Converting the camera forward vector to a rotation
+        camAngle = Vector3.Angle(Vector3.forward, Cam.transform.forward);
+        if (Cam.transform.forward.x < 0.0f)
+            camAngle = 360f - camAngle;
+
+        // Apply Drag and Gravity to the target velocity
+        targetVelocity = new Vector3(targetVelocity.x - targetVelocity.x < 0 ? -(Time.deltaTime * horizontalDrag) : (Time.deltaTime * horizontalDrag), 
+                                     targetVelocity.y - (Time.deltaTime * (targetVelocity.y > 10f ? gravity * 2 : gravity)), 
+                                     targetVelocity.z - (Time.deltaTime * horizontalDrag));
+
+         //if (targetVelocity.z < 0)
+           //targetVelocity = new Vector3(targetVelocity.x, targetVelocity.y, 0);
+
+        // Rotating the target velocity so it becomes the forward velocity
+        forwardVelocity = Quaternion.AngleAxis(camAngle, Vector3.up).normalized * targetVelocity;
+
+        // Apply calculated velocity's
+        rb.velocity = Vector3.Lerp(rb.velocity, forwardVelocity, Time.deltaTime * flapTransition);
     }
 
     void Glide() {
-        targetVelocity = new Vector3(rb.velocity.x, Mathf.Clamp(rb.velocity.y + (-0.4f + glideEffectiveness), -0.1f, 50f), rb.velocity.z) + (Cam.transform.forward * glideForce);
-        /*
-        // Set the y velocity to value between -0.1f and 50f based on how horizontal the controllers are
-        rb.velocity = new Vector3(rb.velocity.x, Mathf.Clamp(rb.velocity.y + (-0.4f + glideEffectiveness), -0.1f, 50f), rb.velocity.z);
-
-        // Add extra velocity forward relative to the players view
-        rb.velocity += (Cam.transform.rotation * Vector3.forward) * glideForce;
-        */
+        // Set the vertical velocity to a small downwards force and cancel out the gravity and drag
+        targetVelocity = new Vector3(rb.velocity.x, (rb.velocity.y > 0 ? -2 + glideEffectiveness : -0.25f + glideEffectiveness) + (gravity * Time.deltaTime), Mathf.Abs(rb.velocity.z) + glideForce);
     }
 
     void Flap() {
-        targetVelocity = new Vector3(rb.velocity.x, rb.velocity.y + flapForce, rb.velocity.z) + (Cam.transform.forward * moveForce);
-        /*
-        // Add vertical force to the current velocity
-        rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y + flapForce, rb.velocity.z);
+        targetVelocity = new Vector3(rb.velocity.x, rb.velocity.y + flapForce,  Mathf.Abs(rb.velocity.z) + moveForce);
 
-        // Add extra velocity forward relative to the players view
-        rb.velocity += (Cam.transform.rotation * Vector3.forward) * moveForce;
-        */
         // Flapped succesfully so disable left and right flap
         leftFlap = false;
         rightFlap = false;
