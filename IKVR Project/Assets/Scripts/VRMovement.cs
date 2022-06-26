@@ -131,9 +131,6 @@ public class VRMovement : MonoBehaviour
                                      targetVelocity.y - (Time.deltaTime * (targetVelocity.y > 10f ? gravity * 2 : gravity)), 
                                      targetVelocity.z - (Time.deltaTime * horizontalDrag));
 
-         //if (targetVelocity.z < 0)
-           //targetVelocity = new Vector3(targetVelocity.x, targetVelocity.y, 0);
-
         // Rotating the target velocity so it becomes the forward velocity
         forwardVelocity = Quaternion.AngleAxis(camAngle, Vector3.up).normalized * targetVelocity;
 
