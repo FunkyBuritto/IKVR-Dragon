@@ -19,11 +19,11 @@
 <br>
 
 <div align="center">
-    <a href="#Concept">Concept</a>
+    <a href="#How-To-Fly">How To Fly</a>
     ·
-    <a href="#Limitations">Limitations</a>
+    <a href="VR-Support">VR Support</a>
     ·
-    <a href="#OSC">OSC</a>
+    <a href="#Levels">Levels</a>
 </div>
 
 <br>
