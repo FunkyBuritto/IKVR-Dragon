@@ -13,7 +13,7 @@
 <br>
 
 <div align="center">
-    <a href="https://github.com/FunkyBuritto/Friends-in-a-galaxy/releases/tag/v0.1.0">Download Build Here!</a>
+    <a href="https://github.com/FunkyBuritto/IKVR-Dragon/releases/tag/v0.1.0">Download Build Here!</a>
 </div>
 
 <br>
