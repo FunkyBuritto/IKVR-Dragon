@@ -53,8 +53,7 @@ You flap your wings by making a flapping motion, this motion is pretty big and r
 <br>
 
 <h1><samp>VR Support</samp></h1>
-<div align="center">
-    
+
 |  VR Headset   | Tested | Supported |
 |---------------|:------:|:---------:|
 | Oculus Rift   |    ✔   |     ✔    |
@@ -63,15 +62,13 @@ You flap your wings by making a flapping motion, this motion is pretty big and r
 | HTC Vive Pro  |   ❌   |     ⚠    |
 | Oculus Quest  |   ❌   |     ❌   |
 | Oculus Quest 2|   ❌   |     ❌   |
-    
- </div>
 
 <br>
 
 <h1><samp>Levels</samp></h1>
 <h3 align="center">
     <div align="center">
-        <img Height=250 src="https://github.com/FunkyBuritto/IKVR-Dragon/blob/main/.github/assets/LQScene.png"> 
-        <img Height=250 src="https://github.com/FunkyBuritto/IKVR-Dragon/blob/main/.github/assets/HQScene.png">
+        <img Height=225 src="https://github.com/FunkyBuritto/IKVR-Dragon/blob/main/.github/assets/LQScene.png"> 
+        <img Height=225 src="https://github.com/FunkyBuritto/IKVR-Dragon/blob/main/.github/assets/HQScene.png">
     </div>
 </h3>
