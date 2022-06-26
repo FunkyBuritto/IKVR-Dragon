@@ -8,6 +8,7 @@ public class VRMovement : MonoBehaviour
     [SerializeField] private Vector3 forwardVelocity;
     private float camAngle;
 
+    private float wingHeight;
     private GameObject leftAnchor;
     private GameObject rightAnchor;
     private GameObject Cam;
@@ -53,6 +54,10 @@ public class VRMovement : MonoBehaviour
     private bool leftFlap, rightFlap;
 
     void Start() {
+        // Get the calibrated wing height
+        wingHeight = PlayerPrefs.GetFloat("height");
+        Debug.Log(wingHeight);
+
         // Find the reference points for the flap/glide heights
         leftAnchor = GameObject.Find("LeftGestures");
         rightAnchor = GameObject.Find("RightGestures");
@@ -71,9 +76,9 @@ public class VRMovement : MonoBehaviour
         visualiserObject.transform.rotation = new Quaternion(0, Mathf.Lerp(visualiserObject.transform.rotation.y, Cam.transform.localRotation.y, Time.deltaTime * rotationSpeed), 0, 0);
 
         // Check if the left controllers height is between two heights and set the leftGlide variable true or false depending on that.
-        if (leftAnchor.transform.position.y - leftController.transform.position.y < 0.2f && leftAnchor.transform.position.y - leftController.transform.position.y > -0.2f) {
+        if (wingHeight - leftController.transform.localPosition.y < 0.2f && wingHeight - leftController.transform.localPosition.y > -0.2f) {
             leftGlide = true;
-            glideEffectiveness = Mathf.Abs((rightAnchor.transform.position.y - rightController.transform.position.y) + (leftAnchor.transform.position.y - leftController.transform.position.y));
+            glideEffectiveness = Mathf.Abs((wingHeight - rightController.transform.localPosition.y) + (wingHeight - leftController.transform.localPosition.y));
         }
         else {
             leftGlide = false;
@@ -81,9 +86,9 @@ public class VRMovement : MonoBehaviour
         }
 
         // Check if the right controllers height is between two heights and set the rightGlide variable true or false depending on that.
-        if (rightAnchor.transform.position.y - rightController.transform.position.y < 0.2f && rightAnchor.transform.position.y - rightController.transform.position.y > -0.2f) {
+        if (wingHeight - rightController.transform.localPosition.y < 0.2f && wingHeight - rightController.transform.localPosition.y > -0.2f) {
             rightGlide = true;
-            glideEffectiveness = Mathf.Abs((rightAnchor.transform.position.y - rightController.transform.position.y) + (leftAnchor.transform.position.y - leftController.transform.position.y));
+            glideEffectiveness = Mathf.Abs((wingHeight - rightController.transform.localPosition.y) + (wingHeight - leftController.transform.localPosition.y));
         }
         else {
             rightGlide = false;
@@ -94,21 +99,21 @@ public class VRMovement : MonoBehaviour
 
 
         // If the left controller is above a certain height start the LeftTopFlapping coroutine
-        if (leftAnchor.transform.position.y - leftController.transform.position.y < -0.3f)
+        if (wingHeight - leftController.transform.localPosition.y < -0.3f)
             StartCoroutine(LeftTopFlapping());
 
         // If the right controller is above a certain height start the LeftTopFlapping coroutine
-        if (rightAnchor.transform.position.y - rightController.transform.position.y < -0.3f)
+        if (wingHeight - rightController.transform.localPosition.y < -0.3f)
             StartCoroutine(RightTopFlapping());
 
         // If the player did not just flap his wings
         if (!cooldown) {
             // Set leftbottom boolean to a true or false depending on if the left controller is below a certain height
-            if (leftAnchor.transform.position.y - leftController.transform.position.y > 0.3f) leftBotom = true;
+            if (wingHeight - leftController.transform.localPosition.y > 0.3f) leftBotom = true;
             else leftBotom = false;
 
             // Set rightBotom boolean to a true or false depending on if the left controller is below a certain height
-            if (rightAnchor.transform.position.y - rightController.transform.position.y > 0.3f) rightBotom = true;
+            if (wingHeight - rightController.transform.localPosition.y > 0.3f) rightBotom = true;
             else rightBotom = false;
 
             // If the player has leftTop and LeftBottom active start the LeftFlapTime Coroutine wich enables and disables leftFlap
