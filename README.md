@@ -21,7 +21,7 @@
 <div align="center">
     <a href="#How-To-Fly">How To Fly</a>
     ·
-    <a href="VR-Support">VR Support</a>
+    <a href="#VR-Support">VR Support</a>
     ·
     <a href="#Levels">Levels</a>
 </div>
